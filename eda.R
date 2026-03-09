@@ -1,5 +1,5 @@
 # Call dataset
-diabetes_raw <- read.table(file = "data/diabetes_risk_dataset.csv", sep = ",", header=T)
+diabetes_raw <- read.table(file = "data/diabetes_raw.csv", sep = ",", header=T)
 
 # Check if any null values
 rows_with_na <- diabetes_raw[!complete.cases(diabetes_raw), ]
@@ -30,3 +30,6 @@ diabetes$diabetes_risk_category <- as.integer(ifelse(
 
 # Remove patient id column
 diabetes <- diabetes[,-1]
+
+write.csv(diabetes, file = "data/diabetes.csv", row.names = FALSE)
+
