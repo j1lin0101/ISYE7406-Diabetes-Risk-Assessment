@@ -6,6 +6,8 @@ rows_with_na <- diabetes_raw[!complete.cases(diabetes_raw), ]
 # No null values
 print(rows_with_na)
 
+diabetes <- diabetes_raw
+
 # Edit gender column
 # Male = 0, Female = 1
 diabetes$gender <- as.integer(ifelse(diabetes$gender == "Female", 1, 0))
